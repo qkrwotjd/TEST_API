@@ -73,7 +73,7 @@ SecurityConfig 혹은 인증(Authentication)/인가(Authorization) 설정이 적
 # 3. 실행 및 테스트 가이드 
 Postman 사용
 
- ## 파일 업로드
+ ### 파일 업로드
 
  https://test-api-5v5e.onrender.com/api/v1/accounting/process 으로 접속하여 Json 파일 Key : jsonFile, Csv 파일 Key : csvFile로 설정
  
@@ -81,12 +81,18 @@ Postman 사용
 
 <img width="842" height="654" alt="image" src="https://github.com/user-attachments/assets/44c6ebc7-1d29-42f1-85a7-70fa858a9894" />
 
- ## 데이터 조회
+ ### 데이터 조회
 
  https://test-api-5v5e.onrender.com/api/v1/accounting/records 으로 접속하여 Key : companyId로 설정 후 value 셋팅
  
  - 예시
 
-   <img width="844" height="674" alt="image" src="https://github.com/user-attachments/assets/c00aab4f-3a66-4f02-a1bf-2ddd0b425c3d" />
+<img width="844" height="674" alt="image" src="https://github.com/user-attachments/assets/c00aab4f-3a66-4f02-a1bf-2ddd0b425c3d" />
+
+
+# 4. AI(LLM 등)를 활용해서 위 과제를 진행한 경우, 아래에 해당사항이 있다면 작성해주세요.
+
+이번 프로젝트를 통해 실제로 API 서비스를 데이터베이스 설계부터 개발, 배포까지 처음으로 직접 경험해보았습니다. 특히 Docker와 같은 기술은 처음 다뤄보는 것이었지만, AI 도구를 적극 활용하면서 부족한 부분을 빠르게 보완할 수 있었습니다.
+그 과정에서, 내가 몰랐던 기술이라도 기존의 개발 경험과 학습 능력을 바탕으로 충분히 빠르게 익히고 적용할 수 있다는 자신감을 얻을 수 있었고, 시스템을 만드는 데 큰 도움이 되었습니다.
 
 
