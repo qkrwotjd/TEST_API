@@ -17,11 +17,55 @@
 
 => 초기 설정이 간편하고, RESTful API를 효율적으로 개발할 수 있는 구조를 제공하여 API 서버 구현에 적합하다고 판단했습니다.
 
-DB : PostgreSQL 
+DB : Hibernate (JPA 기반 ORM 프레임워크) 
 
-=> Spring Boot와의 호환성이 뛰어나고, 기업에서도 널리 사용될 만큼 안정성과 신뢰성이 검증된 데이터베이스이기 때문에 선택했습니다.
+=> Java 객체(Entity 클래스)와 관계형 데이터베이스(PostgreSQL) 간의 매핑을 자동화하여 SQL 작성 없이도 CRUD 기능을 효율적으로 구현할 수 있었어서 선택했습니다.
 
 ### DB 스키마
+
+```
+- 회사 테이블
+CREATE TABLE company (
+    company_id VARCHAR PRIMARY KEY,
+    company_name VARCHAR
+);
+
+
+- 카테고리 종류 테이블
+CREATE TABLE category (
+    seq_no SERIAL PRIMARY KEY,
+    company_id VARCHAR,
+    category_id VARCHAR,
+    category_name VARCHAR,
+    CONSTRAINT fk_category_company FOREIGN KEY (company_id) REFERENCES company (company_id)
+);
+
+
+- 카테고리들이 들고 있는 keyword 테이블
+CREATE TABLE category_keyword (
+    seq_no SERIAL PRIMARY KEY,
+    keyword VARCHAR,
+    category_seq_no INTEGER,
+    CONSTRAINT fk_category_keyword_category FOREIGN KEY (category_seq_no) REFERENCES category (seq_no)
+);
+
+
+- 회사별 거래내역(카테고리, keyword 포함) 테이블
+CREATE TABLE transaction_result (
+    seq_no SERIAL PRIMARY KEY,
+    company_id VARCHAR,
+    category_id VARCHAR,
+    company_name VARCHAR,
+    category_name VARCHAR,
+    keyword VARCHAR,
+    deposit_amt BIGINT,
+    withdraw_amt BIGINT,
+    balance BIGINT,
+    tr_dt TIMESTAMP,
+    branch VARCHAR
+);
+
+```
 
 ## 핵심 자동 분류 로직
 
