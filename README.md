@@ -1,4 +1,6 @@
 # TEST_API
+# 1. 핵심 로직 구현 코드
+
 
 
 # 2.설계 및 보안 아키텍처 기술서
@@ -66,4 +68,25 @@ SecurityConfig 혹은 인증(Authentication)/인가(Authorization) 설정이 적
 예를 들어, 사용자의 세션에 포함된 사업장 고유 코드와 요청 파라미터의사업장 고유 코드가 다르면 예외(Exception)를 발생시켜 접근을 차단합니다.
 
 또한, 데이터 접근 시에는 반드시 로그인된 사용자 또는 토큰 정보 기준으로 필터링하는 보안 정책을 적용해야 합니다.
-    
+
+
+# 3. 실행 및 테스트 가이드 
+Postman 사용
+
+ ## 파일 업로드
+
+ https://test-api-5v5e.onrender.com/api/v1/accounting/process 으로 접속하여 Json 파일 Key : jsonFile, Csv 파일 Key : csvFile로 설정
+ 
+ - 예시
+
+<img width="842" height="654" alt="image" src="https://github.com/user-attachments/assets/44c6ebc7-1d29-42f1-85a7-70fa858a9894" />
+
+ ## 데이터 조회
+
+ https://test-api-5v5e.onrender.com/api/v1/accounting/records 으로 접속하여 Key : companyId로 설정 후 value 셋팅
+ 
+ - 예시
+
+   <img width="844" height="674" alt="image" src="https://github.com/user-attachments/assets/c00aab4f-3a66-4f02-a1bf-2ddd0b425c3d" />
+
+
